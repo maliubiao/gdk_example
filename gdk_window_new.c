@@ -107,7 +107,4 @@ void paint_window(GdkEventKey *event)
 		cairo_destroy(p);
 	}
 
-
-		printf("don't paint\n");
-	}
 }
