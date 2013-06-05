@@ -67,13 +67,13 @@ GdkWindow* init_window()
 	gwa->override_redirect=0;
 	gwa->type_hint=GDK_WINDOW_TYPE_HINT_NORMAL;
 	GdkWindow *window;	
-	GdkRGBA color;
-	color.red=0.4;
-	color.green=0.4;
-	color.blue=0.7;
-	color.alpha=1;
+	GdkRGBA *pcolor = malloc(sizeof(GdkRGBA));
+	color->red=0.4;
+	color->green=0.4;
+	color->blue=0.7;
+	color->alpha=1;
 	window=gdk_window_new(NULL,gwa,GDK_WA_TITLE|GDK_WA_X|GDK_WA_Y );
-	gdk_window_set_background_rgba(window,&color);
+	gdk_window_set_background_rgba(window,pcolor);
 	return window;
 }
 void delete_window(GdkEvent *event)
